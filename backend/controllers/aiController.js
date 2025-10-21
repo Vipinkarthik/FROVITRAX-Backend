@@ -16,11 +16,14 @@ export const analyzeCSV = async (req, res) => {
     formData.append('file', fs.createReadStream(filePath));
     formData.append('product_type', product_type);
 
-    const response = await axios.post('http://localhost:8000/predict', formData, {
-      headers: formData.getHeaders(),
-      maxContentLength: Infinity,
-      maxBodyLength: Infinity
-    });
+    const AI_MODEL_URL = process.env.AI_MODEL_URL;
+
+const response = await axios.post(AI_MODEL_URL, formData, {
+  headers: formData.getHeaders(),
+  maxContentLength: Infinity,
+  maxBodyLength: Infinity
+});
+
 
     res.json(response.data);
   } catch (err) {
