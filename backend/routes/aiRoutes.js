@@ -1,5 +1,5 @@
 import express from 'express';
-import { upload, analyzeCSV } from '../controllers/aicontroller.js';
+import { upload, analyzeCSV } from '../controllers/aiController.js';
 
 const router = express.Router();
 
