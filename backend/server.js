@@ -28,8 +28,14 @@ app.get('/', (req, res) => {
 
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173', 'http://127.0.0.1:5173' ,'https://frovitraxcom.vercel.app/' , 'https://frovitrax.netlify.app/'],
-  credentials: true
+  origin: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  'https://frovitraxcom.vercel.app',
+  'https://frovitrax.netlify.app'
+],
+ credentials: true
 }));
 
 // Health check endpoint
